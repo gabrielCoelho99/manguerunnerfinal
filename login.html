@@ -18,69 +18,10 @@
     </div>
     <div class="form">
         <form id="loginForm">
-            <div class="form-header">
-                <div class="title">
-                    <h1>Entrar</h1>
-                </div>
-                <div class="login-button">
-                    <button><a href="cadastro.html">Cadastrar-se</a></button>
-                </div>
-            </div>
-
-            <div class="text-welcome">
-                <p>Seja bem-vindo(a) de volta</p>
-            </div>
-
-            <div class="input-group">
-                <div class="input-box">
-                    <label for="email">E-mail: </label>
-                    <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
-                </div>
-
-                <div class="input-box">
-                    <label for="password">Senha: </label>
-                    <input id="password" type="password" name="password" placeholder="Digite a sua senha" required>
-                </div>
-            </div>
-
-            <div class="cadastrar-button">
-                <button type="submit">Entrar</button>
-            </div>
+            <!-- Seu formulário de login aqui -->
         </form>
     </div>
 </div>
-
-<script>
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const data = {
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value
-    };
-
-    fetch('https://mangue-runner-mu.vercel.app/', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.token) {
-            alert('Login bem-sucedido'); 
-            
-            window.location.href = 'index.html';
-        } else {
-            alert(data.message); 
-        }
-    })
-    .catch(error => {
-        console.error('Erro:', error);
-    });
-});
-</script>
-
+<script src="js/login.js"></script>
 </body>
 </html>
