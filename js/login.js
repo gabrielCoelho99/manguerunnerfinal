@@ -6,7 +6,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         password: document.getElementById('password').value
     };
 
-    fetch('https://seu-app.vercel.app/api/auth/login', {
+    fetch('https://mangue-runner-two.vercel.app/api/auth/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
