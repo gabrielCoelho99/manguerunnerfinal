@@ -15,14 +15,14 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     try {
         console.log('Enviando dados:', JSON.stringify(formData));
 
-        const response = await fetch('https://seu-app.vercel.app/api/auth/register', {
+        const response = await fetch('https://mangue-runner-two.vercel.app/api/auth/register', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
         });
-
+        
         if (!response.ok) {
             const errorData = await response.json();
             throw new Error(errorData.message || 'Erro ao cadastrar usuário');
